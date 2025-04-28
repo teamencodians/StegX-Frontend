@@ -21,7 +21,7 @@ export default function TextText() {
       formData.append('text', textFile);
       formData.append('password', password);
 
-      const res = await axios.post('http://stegx-backend.onrender.com/encode/text', formData, { responseType: 'blob' });
+      const res = await axios.post('https://stegx-backend.onrender.com/text-text/encode', formData, { responseType: 'blob' });
 
       const blob = new Blob([res.data]);
       const link = document.createElement('a');
@@ -53,7 +53,7 @@ export default function TextText() {
       formData.append('text', textFile);
       formData.append('password', password);
 
-      const res = await axios.post('http://stegx-backend.onrender.com/decode/text', formData);
+      const res = await axios.post('https://stegx-backend.onrender.com/text-text/decode', formData);
       setDecoded(res.data.message);
 
       Swal.fire({
