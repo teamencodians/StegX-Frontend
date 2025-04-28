@@ -21,7 +21,7 @@ export default function ImageImage() {
       formData.append('secret', secret);
       formData.append('password', password);
 
-      const res = await axios.post('http://localhost:5000/api/encode/imageinimage', formData, {
+      const res = await axios.post('http://stegx-backend.onrender.com/encode/imageinimage', formData, {
         responseType: 'blob',
       });
 
@@ -55,7 +55,7 @@ export default function ImageImage() {
       formData.append('stego', stego);
       formData.append('password', password);
 
-      const res = await axios.post('http://localhost:5000/api/decode/imageinimage', formData, {
+      const res = await axios.post('http://stegx-backend.onrender.com/decode/imageinimage', formData, {
         responseType: 'blob',
       });
 

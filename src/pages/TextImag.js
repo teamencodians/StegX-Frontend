@@ -19,7 +19,7 @@ export default function TextImage() {
       formData.append('image', image);
       formData.append('password', password);
 
-      const res = await axios.post('http://localhost:5000/api/encode/image', formData, { responseType: 'blob' });
+      const res = await axios.post('http://stegx-backend.onrender.com/encode/image', formData, { responseType: 'blob' });
 
       const blob = new Blob([res.data]);
       const link = document.createElement('a');
@@ -51,7 +51,7 @@ export default function TextImage() {
       formData.append('image', image);
       formData.append('password', password);
 
-      const res = await axios.post('http://localhost:5000/api/decode/image', formData);
+      const res = await axios.post('http://stegx-backend.onrender.com/decode/image', formData);
       setDecoded(res.data.message);
 
       Swal.fire({

@@ -21,7 +21,7 @@ export default function TextAudio() {
       formData.append('audio', audio);
       formData.append('password', password);
 
-      const res = await axios.post('http://localhost:5000/api/encode/audio', formData, { responseType: 'blob' });
+      const res = await axios.post('http://stegx-backend.onrender.com/encode/audio', formData, { responseType: 'blob' });
 
       const blob = new Blob([res.data]);
       const link = document.createElement('a');
@@ -53,7 +53,7 @@ export default function TextAudio() {
       formData.append('audio', audio);
       formData.append('password', password);
 
-      const res = await axios.post('http://localhost:5000/api/decode/audio', formData);
+      const res = await axios.post('http://stegx-backend.onrender.com/decode/audio', formData);
       setDecoded(res.data.message);
 
       Swal.fire({
